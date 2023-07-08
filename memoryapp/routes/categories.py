@@ -20,3 +20,9 @@ def add_category():
 def category(category_id):
     return jsonify(get_category(category_id))
 
+
+@app.route('/categories/<int:category_id>',methods=["DELETE"])
+def remove_category(category_id):
+    delete_category(category_id)
+
+    return '', 204
